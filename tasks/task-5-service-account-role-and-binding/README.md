@@ -68,6 +68,11 @@ To create the role binding run
 kubectl create rolebinding job-runner-binding --role job-runner-role --serviceaccount default:job-runner --dry-run=client -o yaml > job-binding.yaml
 ```
 
+```bash
+kubectl apply -f job-binding.yaml
+```
+
+
 ## Assign service account to api deployment
 
 We must assign which pod(s) the service account is valid for. 
@@ -83,6 +88,10 @@ Open it and add `serviceAccountName: job-runner` so the last spec section  of th
       - image: blog-api:0.1
         name: my-blog-api
         resources: {}
+```
+
+```bash
+kubectl apply -f api.yaml
 ```
 
 
