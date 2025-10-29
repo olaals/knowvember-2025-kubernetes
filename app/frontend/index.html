@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>★ My Cool Blog ★</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/assets/styles.css"/>
+</head>
+<body class="bg-noise">
+  <div class="page-frame">
+    <header class="header-90s">
+      <marquee scrollamount="10" behavior="alternate" class="marquee">
+        <span class="rainbow-text">✨ Welcome to My Cool Kubernetes Blog ✨</span>
+      </marquee>
+      <div class="badges">
+        <span class="badge">Best viewed in 800x600</span>
+        <span class="badge">Under Construction 🚧</span>
+        <span class="badge">Made with HTML!</span>
+      </div>
+    </header>
+
+    <table class="layout">
+      <tr>
+        <td class="sidebar">
+          <h3 class="sidebar-title">Navigation</h3>
+          <ul class="nav-links">
+            <li><a href="#/">Posts</a></li>
+            <li><a href="#/new">New Post</a></li>
+          </ul>
+
+          <hr class="hr-blue"/>
+
+          <h3 class="sidebar-title">Basic Cool Stuff</h3>
+          <ul class="nav-links">
+            <li><a href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank" class="animated-link">Pods Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank" class="animated-link">Deployment Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/concepts/services-networking/service/" target="_blank" class="animated-link">Service Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/" target="_blank" class="animated-link">Network Policy Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole" target="_blank" class="animated-link">Role Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding" target="_blank" class="animated-link">RoleBinding Docs</a></li>
+            <li><a href="https://kubernetes.io/docs/concepts/security/service-accounts/" target="_blank" class="animated-link">Service Account Docs</a></li>
+          </ul>
+
+          <hr class="hr-blue"/>
+
+          <h3 class="sidebar-title">Cooler Stuff (not covered)</h3>
+            <li><a href="" target="_blank" class="animated-link">Ingress Docs</a></li>
+          <ul class="nav-links">
+          </ul>
+        </td>
+        <td class="content">
+          <blog-app></blog-app>
+        </td>
+      </tr>
+    </table>
+
+    <footer class="footer-90s">
+      <marquee direction="right" scrollamount="6" class="marquee small">
+        <span>2025 • Kubernetes from the ground up with kubectl • Knowvember </span>
+      </marquee>
+    </footer>
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+  <script>
+    const k = "visitCounter";
+    const n = (parseInt(localStorage.getItem(k) || "1", 10) + 1);
+    localStorage.setItem(k, String(n));
+    const pad = (x) => x.toString().padStart(6, "0");
+    document.getElementById("visitCounter")?.textContent = pad(n);
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-api
+  name: my-api
+  namespace: new-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-api
+    spec:
+      serviceAccountName: job-runner
+      containers:
+      - image: blog-api:0.1
+        name: my-blog-api
+        env:
+          - name: REDIS_ADDR
+            value: redis.default.svc.cluster.local:6379
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          seccompProfile:
+            type: RuntimeDefault
+status: {}

@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{NAME}}
+  namespace: {{NAMESPACE}}
+  labels:
+    app: image-effect
+spec:
+  ttlSecondsAfterFinished: {{TTL_SECONDS}}
+  backoffLimit: {{BACKOFF_LIMIT}}
+  template:
+    metadata:
+      labels:
+        job: {{NAME}}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: job
+          image: {{IMAGE}}
+          env:
+            - name: REDIS_ADDR
+              value: "{{REDIS_ADDR}}"
+            - name: IMAGE_ID
+              value: "{{POST_ID}}"
+            - name: EFFECT
+              value: "{{EFFECT}}"

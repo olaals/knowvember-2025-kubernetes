@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-frontend
+  name: my-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-frontend
+    spec:
+      containers:
+      - image: blog-frontend:0.1
+        name: blog-frontend
+        env:
+        - name: UPSTREAM_API
+          value: http://my-api-service:8050
+        resources: {}
+status: {}

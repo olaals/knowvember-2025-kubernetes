@@ -1,0 +1,93 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Papyrus", "Trebuchet MS", system-ui, sans-serif;
+  cursor: default;
+}
+.bg-noise {
+  background:
+    repeating-linear-gradient(45deg, #ffe, #ffe 10px, #ffd 10px, #ffd 20px),
+    radial-gradient(circle at 10% 10%, #ffff00 0 10%, transparent 11%),
+    radial-gradient(circle at 90% 30%, #66ccff 0 12%, transparent 13%),
+    radial-gradient(circle at 30% 80%, #66ff66 0 8%, transparent 9%),
+    linear-gradient(180deg, #fff, #fdf7d3);
+  background-blend-mode: multiply, normal, normal, normal, screen;
+}
+.page-frame {
+  max-width: 1000px;
+  margin: 10px auto;
+  border: 6px ridge #d0d0d0;
+  background: #fffef7;
+  box-shadow: 0 0 0 4px #ff00ff, 0 0 0 8px #00ffff;
+}
+.header-90s { padding: 8px; background: linear-gradient(90deg,#ff0,#0ff,#f0f,#0f0); }
+.marquee { font-weight: 700; text-transform: uppercase; }
+.marquee.small { font-size: 12px; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.badge {
+  padding: 2px 6px;
+  border: 2px outset #888;
+  background: repeating-linear-gradient(45deg,#ffffcc,#ffffcc 6px,#fff 6px,#fff 12px);
+  box-shadow: inset 0 0 0 2px #00000022;
+}
+.layout { width: 100%; border-collapse: collapse; }
+.sidebar {
+  width: 260px; vertical-align: top; background: #ffffe0; padding: 10px;
+  border-right: 4px groove #c0c0c0;
+}
+.sidebar-title { margin: 0 0 6px 0; text-shadow: 1px 1px 0 #fff, 2px 2px 0 #0003; }
+.nav-links { list-style: square inside; padding-left: 0; margin: 0; }
+.nav-links a { color: #0000ee; text-decoration: underline wavy #ff00ff; }
+.nav-links a:hover { color: #ff0000; background: #00ffff; }
+.content { padding: 12px; background: #fff; }
+.rainbow-text {
+  background: conic-gradient(from 0deg, red, orange, yellow, lime, cyan, blue, magenta, red);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 6px #00000044;
+}
+.rainbow-text.big { font-size: 28px; }
+.blink { animation: blink 1s steps(2, jump-none) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.bevel { border: 4px outset #c0c0c0; background: #fffffd; }
+.titlebar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 6px 8px;
+  color: #000; background: linear-gradient(180deg,#0ff,#09f);
+  font-weight: 700; text-shadow: 1px 1px 0 #fff;
+}
+.app-card { margin: 8px 0 16px; }
+.content-area { padding: 10px; }
+.card { display: grid; gap: 10px; padding: 12px; background: #fff; }
+.form-90s input, .form-90s textarea, .form-90s button {
+  font-family: inherit; font-size: 16px; padding: 6px; border: 3px ridge #888; background: #fffff5;
+}
+.btn-3d { background: linear-gradient(#fff,#eee); box-shadow: 2px 2px 0 #0006; cursor: pointer; }
+.btn-3d:active { box-shadow: 1px 1px 0 #0006; transform: translate(1px,1px); }
+.btn-yellow { background: linear-gradient(#ffef75, #ffd54f); border-color: #ccaa00; color: #000; }
+.table-90s { width: 100%; border: 3px groove #999; border-collapse: separate; }
+.table-90s th, .table-90s td { padding: 8px; border: 2px ridge #ccc; background: #fffffb; }
+.table-90s th { background: linear-gradient(#ff9,#ff0); }
+.loading { opacity: 0.9; font-weight: 700; }
+.error { color: #c00; font-weight: 700; }
+.hint { opacity: 0.85; font-style: italic; }
+.mono { font-family: "Courier New", ui-monospace, monospace; white-space: pre-wrap; }
+.post-window { margin-top: 8px; }
+.post-body { padding: 10px; }
+.post-image { max-width: 100%; display: block; margin: 8px 0; }
+.funky-border {
+  border: 6px double #ff00ff;
+  box-shadow: 0 0 0 6px #00ffff, 0 0 0 10px #ffff00, 0 0 14px #0008;
+}
+.counter-card { padding: 8px; border: 3px inset #aaa; background: #fffffa; }
+.hr-blue { height: 4px; border: none; background: #09f; }
+.loud-link { color: #ff00ff; text-decoration: underline double #0ff; font-weight: 700; }
+.loud-link:hover { background: #ffff00; color: #000; }
+.animated-link { position: relative; }
+.animated-link::after {
+  content: " »"; animation: bounce 0.7s infinite alternate ease-in-out;
+}
+@keyframes bounce { to { transform: translateX(4px); } }
+.footer-90s { padding: 6px; border-top: 4px groove #c0c0c0; background: linear-gradient(90deg,#0ff,#f0f,#ff0); color: #000; }
