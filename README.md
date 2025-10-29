@@ -39,7 +39,7 @@ and create all files there
 **Redis**
 - In-memory database used for simplicity
 
-**Job**
+**Image Job**
 - Job for image processing
 - Short-lived containers spun up on demand 
 - Reads and writes to Redis 

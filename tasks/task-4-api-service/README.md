@@ -54,7 +54,7 @@ kubectl get services
 It is also good to check that the service points to atleast one pod IP with
 
 ```bash
-kubectl get endpoints my-api- # press tab to autocomplete
+kubectl get endpoints my-api-serivce
 ```
 
 ## Set env for service in frontend.yaml
@@ -123,7 +123,7 @@ and verify that you now have 2 replicas of the api pod running.
 
 Checking which IPs the service now points to
 ```bash
-kubectl get endpoints my-api
+kubectl get endpoints my-api-service
 ```
 we see that it now has 2 IPs.
 
