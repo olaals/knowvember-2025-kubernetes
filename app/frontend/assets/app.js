@@ -29,7 +29,6 @@ function renderErrorCard(title, detailsHtml) {
       <h2 class="rainbow-text big">${escapeHTML(title)}</h2>
       <p class="error">Could not reach the API.</p>
       ${detailsHtml ? `<p class="mono">${detailsHtml}</p>` : ""}
-      <p><a class="loud-link" href="#/new">Create a post</a> or try again.</p>
     </div>
   `;
 }
@@ -111,7 +110,6 @@ class BlogApp extends HTMLElement {
         <div class="post-window bevel">
           <div class="titlebar">
             <span>📝 ${escapeHTML(p.title)}</span>
-            <span class="mini-led blink">REC</span>
           </div>
           <div class="post-body">
             <img class="post-image funky-border"

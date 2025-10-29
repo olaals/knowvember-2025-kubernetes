@@ -1,4 +1,8 @@
-:root { color-scheme: light dark; }
+:root {
+  color-scheme: only light;
+  color: #000;
+  background-color: #fffef7;
+}
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {

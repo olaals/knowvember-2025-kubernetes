@@ -6,8 +6,6 @@ metadata:
   labels:
     app: image-effect
 spec:
-  ttlSecondsAfterFinished: {{TTL_SECONDS}}
-  backoffLimit: {{BACKOFF_LIMIT}}
   template:
     metadata:
       labels:

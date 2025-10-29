@@ -100,8 +100,6 @@ func (kc *K8sClient) CreateImageEffectJob(ctx context.Context, image, redisAddr,
 		"{{REDIS_ADDR}}", redisAddr,
 		"{{POST_ID}}", postID,
 		"{{EFFECT}}", effect,
-		"{{TTL_SECONDS}}", "300",
-		"{{BACKOFF_LIMIT}}", "0",
 	).Replace(string(data))
 	resp, err := kc.doRaw(ctx, http.MethodPost, "/apis/batch/v1/namespaces/"+kc.namespace+"/jobs", "application/yaml", []byte(yaml))
 	if err != nil {
@@ -174,4 +172,3 @@ func firstNonEmpty(s ...string) string {
 	}
 	return ""
 }
-

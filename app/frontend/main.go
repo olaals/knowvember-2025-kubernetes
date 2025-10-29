@@ -16,7 +16,7 @@ var staticFS embed.FS
 
 func main() {
 	addr := ":" + getenv("PORT", "8045")
-	upstream := getenv("UPSTREAM_API", "http://api:8045")
+	upstream := getenv("UPSTREAM_API", "")
 
 	u, err := url.Parse(upstream)
 	if err != nil {

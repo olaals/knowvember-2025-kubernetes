@@ -105,3 +105,5 @@ git diff --no-index . ../tasks/task-5-service-account-role-and-binding/solution
 
 and check that there is no diff
 
+
+[Next task](../task-6-move-api-to-another-namespace/)

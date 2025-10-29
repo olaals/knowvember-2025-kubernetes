@@ -24,6 +24,12 @@ and create all files there
 5. [Job: service account, role and role binding ](./tasks/task-5-service-account-role-and-binding/)
 
 
+**Extra tasks**
+
+6. [Move api to another namespace](./tasks/task-6-move-api-to-another-namespace/)
+7. [Api security context](./tasks/task-7-api-security-context/)
+
+
 ## Application diagram
 
 **Blog Frontend**
@@ -39,7 +45,7 @@ and create all files there
 **Redis**
 - In-memory database used for simplicity
 
-**Job**
+**Image Job**
 - Job for image processing
 - Short-lived containers spun up on demand 
 - Reads and writes to Redis 
@@ -62,3 +68,6 @@ flowchart LR
   API -->|read and write| REDIS
   JOB -->|read and write image| REDIS
 ```
+
+
+When you are done, it is a good idea to turn off kubernetes mode in docker-desktop again, to have less running in the background.

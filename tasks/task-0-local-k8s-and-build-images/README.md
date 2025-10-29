@@ -5,11 +5,13 @@
 Installing local Kubernetes cluster with docker desktop is the preferred method in this tutorial
 as it is very easy and comes with kubectl CLI.
 
+If you have not installed kubernetes from docker-desktop before:
+
 To enable Kubernetes in Docker Desktop:
 - 1: Open the GUI
 - 2: Click on the gear icon in the upper right corner
 - 3: Click on the "Enable Kubernetes" toggle. Just leave everything as default.
-- 4: Click "Apply" in the lower right corner.
+- 4: Click "Apply & Restart" in the lower right corner. 
 - 5: Wait until it says "Running" under "Cluster"
 - 6: Open a new terminal and check that you are able to run ``kubectl version``
 
@@ -18,6 +20,14 @@ Expected output for kubectl version is
 Client Version: v<your-version>
 Kustomize Version: v<your-version>
 Server Version: v<your-version>
+```
+
+If you have kubectl previously installed it is nice to 
+verify that you are doing this tutorial in docker desktop and not on your 
+production cluster with 
+
+```bash
+kubectl config use-context docker-desktop
 ```
 
 ## Build docker images

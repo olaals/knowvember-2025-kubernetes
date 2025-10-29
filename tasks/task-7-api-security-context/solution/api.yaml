@@ -22,10 +22,10 @@ spec:
       containers:
       - image: blog-api:0.1
         name: my-blog-api
-        env:
-          - name: REDIS_ADDR
-            value: redis.default.svc.cluster.local:6379
         resources: {}
+        env:
+        - name: REDIS_ADDR
+          value: redis.default.svc.cluster.local:6379
         securityContext:
           runAsUser: 1000
           runAsNonRoot: true
