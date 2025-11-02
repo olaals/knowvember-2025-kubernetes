@@ -79,7 +79,7 @@ We must assign which pod(s) the service account is valid for.
 
 Then we need to edit the `api` deployment we created in task 3.
 
-Open it and add `serviceAccountName: job-runner` so the last spec section  of the file looks like this:
+Open `api.yaml` and add `serviceAccountName: job-runner` so the last spec section  of the file looks like this:
 
 ```yaml
     spec:
