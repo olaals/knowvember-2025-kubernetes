@@ -54,7 +54,7 @@ kubectl get services
 It is also good to check that the service points to atleast one pod IP with
 
 ```bash
-kubectl get endpoints my-api-serivce
+kubectl get endpoints my-api-service
 ```
 
 ## Set env for service in frontend.yaml
