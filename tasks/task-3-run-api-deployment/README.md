@@ -88,6 +88,10 @@ to
 
 Now we can just re-apply the fixed file
 
+```bash
+kubectl apply -f api.yaml
+```
+
 Lets again check that it is running
 
 ```bash
