@@ -42,7 +42,7 @@ We will first delete the existing API deployment in the default namespace.
 We delete the deployment and related resources in the default namespace with
 
 ```bash
-kubectl delete -f api.yaml -f sa.yaml -f api-svc.yaml
+kubectl delete -f api.yaml -f sa.yaml -f api-svc.yaml -f job-role.yaml -f job-binding.yaml
 ```
 
 To create the new namespace do
@@ -70,33 +70,34 @@ metadata:
 ```
 
 
-We also update the metadata section of the service account in `sa.yaml`
+Additionally add `namespace: new-ns` in metadata section of
+- `api-svc.yaml`
+- `sa.yaml`
+- `job-role.yaml`
+- `job-binding.yaml`
+
+
+We also need to specify the correct namespace for the service account in `job-binding.yaml`
+
+Update the namespace for the service account job-runner from `namespace: default` to `namespace: new-ns` in `job-binding.yaml`
 
 ```yaml
-metadata:
-  creationTimestamp: null
+subjects:
+- kind: ServiceAccount
   name: job-runner
-  namespace: new-ns
+  namespace: default
 ```
 
-and the api service in `api-svc.yaml`
-
-```yaml
-metadata:
-  creationTimestamp: null
-  labels:
-    app: my-api
-  name: my-api-service
-  namespace: new-ns
-```
-
-Now lets apply them again
+and apply everything with 
 
 ```bash
-kubectl apply -f api.yaml -f sa.yaml -f api-svc.yaml
+kubectl apply -f .
 ```
 
+where ´.´ means all files in the current directory
+
 We can now check that the pods run with
+
 ```bash
 kubectl get pods -n new-ns
 ```
@@ -131,25 +132,14 @@ The application defaulted to `redis:6379` but now we need to provide in `api.yam
           value: redis.default.svc.cluster.local:6379
 ```
 
+Apply all files again:
 
-We also need to specify the correct namespace for the service account in `job-binding.yaml`
-
-Update the namespace for the service account job-runner from `namespace: default` to `namespace: new-ns` in `job-binding.yaml`
-
-```yaml
-subjects:
-- kind: ServiceAccount
-  name: job-runner
-  namespace: default
-```
-
-and apply everything with 
-
-```
+```bash
 kubectl apply -f .
 ```
 
 After these updates the app should now be working again
+
 
 ## Verify solution
 

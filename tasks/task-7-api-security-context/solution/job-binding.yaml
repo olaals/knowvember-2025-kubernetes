@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   creationTimestamp: null
   name: job-runner-binding
+  namespace: new-ns
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -10,4 +11,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: job-runner
-  namespace: default
+  namespace: new-ns
