@@ -1,5 +1,4 @@
-
-# Task 6 Move API to another namespace
+# Task 6 - Move API to another namespace
 
 ```mermaid
 flowchart LR

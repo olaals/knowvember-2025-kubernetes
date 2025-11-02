@@ -1,4 +1,4 @@
-# Task 01 - Run Frontend Pod
+# Task 1 - Run Frontend Pod
 
 
 ## Create and access pod imperatively
