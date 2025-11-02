@@ -134,7 +134,20 @@ The application defaulted to `redis:6379` but now we need to provide in `api.yam
 
 We also need to specify the correct namespace for the service account in `job-binding.yaml`
 
-Update the namespace for the service account job-runner from `namespace: default` to `namespace: new-ns`
+Update the namespace for the service account job-runner from `namespace: default` to `namespace: new-ns` in `job-binding.yaml`
+
+```yaml
+subjects:
+- kind: ServiceAccount
+  name: job-runner
+  namespace: default
+```
+
+and apply everything with 
+
+```
+kubectl apply -f .
+```
 
 After these updates the app should now be working again
 
