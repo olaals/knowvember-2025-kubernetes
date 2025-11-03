@@ -5,6 +5,12 @@
 
 ## Info
 
+Clone repo
+
+```
+git clone https://github.com/olaals/knowvember-2025-kubernetes.git
+```
+
 Navigate to the `workdir` folder before starting the tasks with
 
 ```bash
