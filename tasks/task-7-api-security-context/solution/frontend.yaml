@@ -20,8 +20,8 @@ spec:
       containers:
       - image: blog-frontend:0.1
         name: blog-frontend
+        resources: {}
         env:
         - name: UPSTREAM_API
           value: http://my-api-service.new-ns.svc.cluster.local:8050
-        resources: {}
 status: {}
