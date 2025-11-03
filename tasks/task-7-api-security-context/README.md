@@ -131,3 +131,5 @@ git diff --no-index . ../tasks/task-7-api-security-context/solution
 
 and check that there is no diff
 
+
+[Next task](../task-8-wrapping-up/)
