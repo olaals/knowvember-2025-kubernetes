@@ -1,4 +1,4 @@
-# Task 3: Run API deployment
+# Task 3: Run API and Redis deployments
 
 ```mermaid
 flowchart LR

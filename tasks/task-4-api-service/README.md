@@ -1,4 +1,4 @@
-# Task 4 - API service
+# Task 4 - API and Redis services
 
 ```mermaid
 flowchart LR
