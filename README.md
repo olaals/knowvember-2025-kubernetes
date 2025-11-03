@@ -42,14 +42,17 @@ and create all files there
 - Serves static assets (JavaScript, HTML, and CSS) at the root path `/`.
 - Proxies all requests under `/api` to the backend API service. 
 - Requires an environment variable `UPSTREAM_API` specifying the base URL of the API service.
+- Listens on port `8045`
 
 **Blog API**
 - API that interacts with Redis 
 - Has an env var `REDIS_ADDR` that defaults to `redis:6379`
 - Can spin up Kubernetes jobs for image processing
+- Listens on port `8050`
 
 **Redis**
 - In-memory database used for simplicity
+- Listens on port `6379`
 
 **Image Job**
 - Job for image processing
