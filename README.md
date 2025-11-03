@@ -35,6 +35,8 @@ and create all files there
 6. [Move api to another namespace](./tasks/task-6-move-api-to-another-namespace/)
 7. [Api security context](./tasks/task-7-api-security-context/)
 
+**Wrapping up**
+[Wrapping up](./tasks/task-8-wrapping-up/)
 
 ## Application diagram
 
