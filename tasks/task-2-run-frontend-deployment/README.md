@@ -18,9 +18,9 @@ flowchart LR
   API -->|read and write| REDIS
   JOB -->|read and write image| REDIS
 
-  %% Node style
   style FE fill:#ffcc00,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
-
+  linkStyle 0 stroke:#ffcc00,stroke-width:3px
+  linkStyle 1 stroke:#ffcc00,stroke-width:3px
 ```
 
 Manually scheduling one and one pod is not recommended to have a  
