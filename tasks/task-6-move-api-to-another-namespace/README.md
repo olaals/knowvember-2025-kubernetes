@@ -7,12 +7,12 @@ flowchart LR
   subgraph K8s[Kubernetes Cluster]
     subgraph NS_default["default"]
       FE[blog-frontend]
-      JOB[image-job]
       REDIS[redis]
     end
 
     subgraph NS_new["new-ns"]
       API[blog-api]
+      JOB[image-job]
     end
   end
 
@@ -23,7 +23,6 @@ flowchart LR
   API -->|read and write| REDIS
   JOB -->|read and write image| REDIS
 
-  %% Highlight only the API node (moved to new namespace)
   style API fill:#ffcc00,stroke:#333,stroke-width:2px,color:#000,font-weight:bold
 ```
 
